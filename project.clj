@@ -3,7 +3,7 @@
   :url          "https://github.com/Day8/re-frame.git"
   :license      {:name "MIT"}
   :dependencies [[org.clojure/clojure        "1.8.0"]
-                 [org.clojure/clojurescript  "1.9.908"]
+                 [org.clojure/clojurescript ~(or (System/getenv "CANARY_CLOJURESCRIPT_VERSION") "1.9.908")]
                  [reagent                    "0.7.0"]
                  [net.cgrand/macrovich       "0.2.0"]
                  [org.clojure/tools.logging  "0.3.1"]]

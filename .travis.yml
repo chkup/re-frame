@@ -1,0 +1,17 @@
+dist: trusty
+
+language: node_js
+
+node_js:
+  - "8"
+
+before_install:
+  - curl -sSL https://raw.githubusercontent.com/cljs-oss/canary/master/scripts/install-canary.sh | bash
+
+script:
+  - npm install karma-cli -g
+  - npm install karma --save-dev
+  - npm install karma-cljs-test --save-dev
+  - npm install --save-dev karma-phantomjs-launcher
+  - lein karma-once
+  - karma start --single-run
